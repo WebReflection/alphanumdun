@@ -31,4 +31,4 @@ Now, because it's possible to use also `_` or `-` as identifier, the choice to a
 
 As a both *JS* and *Python* developer, I know that imports from *Python* accept `_` as module name, due syntax restrictions, but not `-` so that `import my-module` would fail but `import my_module` wouldn't.
 
-And that's it, since most peope out there developing and using the *FileSystemHandle* primitive will need to deal with syntax constraints and/or *Python*, I've felt like it was natural to keep the `_` char that is widely supported in various *PLs* syntaxes, and exclude `-` from the equation so that `-` or the explicit `-19-` input would produce two entirely different unique identifiers as output 🥳
+And that's it, since most people out there developing and using the *FileSystemHandle* primitive will need to deal with syntax constraints and/or *Python*, I've felt like it was natural to keep the `_` char that is widely supported in various *PLs* syntaxes, and exclude `-` from the equation so that `-` or the explicit `-19-` input would produce two entirely different unique identifiers as output 🥳
