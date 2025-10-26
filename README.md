@@ -16,3 +16,9 @@ console.assert(id.decode(id.encode('/test')) === '/test');
 // that's it, that `/test` will work when you use it
 // as 'id` for the FileSystemHandle API
 ```
+
+## Implementation Details
+
+This 4 LOC utility simply excludes `-` as valid char and converts anything that is not `a-z`, `A-Z` or `0-9` into its *base36* counterpart surrounded by `-` accepted chars to guarantee every intent is unique but penalizing strings that heavily use `-` within their value.
+
+That's it, you can convert back and forward anything you like and use that as `id` in any *FileSystemHandle* related operation that accepts such `id` as optional *hint*.
