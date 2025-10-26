@@ -1,6 +1,6 @@
 {
   "name": "alphanumdun",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Translate strings to valid IDs to be used for FileSystemHandle API",
   "main": "index.js",
   "module": "index.js",
