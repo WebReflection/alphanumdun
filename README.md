@@ -12,7 +12,7 @@ I have no idea why *W3C* would define such limitation/spec around what could be 
 ```js
 import * as id from 'https://esm.run/alphanumdun';
 
-console.assert(decode(encode('/test')) === '/test');
+console.assert(id.decode(id.encode('/test')) === '/test');
 // that's it, that `/test` will work when you use it
 // as 'id` for the FileSystemHandle API
 ```
