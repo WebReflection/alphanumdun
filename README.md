@@ -1,6 +1,6 @@
 # alphanumdun
 
-Alphanumeric + `_` and `-` is what [this W3C specification is after](https://wicg.github.io/file-system-access/#api-filepickeroptions-starting-directory):
+Alphanumeric + `-` (*dash*) and `_` (*underscore*) is what [this W3C specification is after](https://wicg.github.io/file-system-access/#api-filepickeroptions-starting-directory):
 
 > A _**valid path id**_ is a [string](https://infra.spec.whatwg.org/#string) where each character is [ASCII alphanumeric](https://infra.spec.whatwg.org/#ascii-alphanumeric) or "_" or "-".
 
