@@ -22,3 +22,13 @@ console.assert(id.decode(id.encode('/test')) === '/test');
 This 2 (effective) LOC utility simply excludes `-` as valid char and converts anything that is not `a-z`, `A-Z` or `0-9` into its *base36* counterpart surrounded by `-` accepted chars to guarantee every intent is unique but penalizing strings that heavily use `-` within their value.
 
 That's it, you can convert back and forward anything you like and use that as `id` in any *FileSystemHandle* related operation that accepts such `id` as optional *hint*.
+
+## Reasons behind `-` as penalized char
+
+First of all, the easy way to convert any string to an alphanumeric compatible value is [base36](https://en.wikipedia.org/wiki/Base36), which is also the top conversion utility we have for numbers in *JS* so that `(1234567890).toString(36)` would produce `kf12oi` which is fully compatible with the alphanumeric ID the specs expect.
+
+Now, because it's possible to use also `_` or `-` as identifier, the choice to avoid collision around users' defined entries and actual transformation is left between those two chars.
+
+As a both *JS* and *Python* developer, I know that imports from *Python* accept `_` as module name, due syntax restrictions, but not `-` so that `import my-module` would fail but `import my_module` wouldn't.
+
+And that's it, since most peope out there developing and using the *FileSystemHandle* primitive will need to deal with syntax constraints and/or *Python*, I've felt like it was natural to keep the `_` char that is widely supported in various *PLs* syntaxes, and exclude `-` from the equation so that `-` or the explicit `-19-` input would produce two entirely different unique identifiers as output 🥳
