@@ -1,0 +1,28 @@
+{
+  "name": "alphanumdun",
+  "version": "0.0.0",
+  "description": "Translate strings to valid IDs to be used for FileSystemHandle API",
+  "main": "index.js",
+  "module": "index.js",
+  "keywords": [
+    "filesystemhandle",
+    "id",
+    "converter",
+    "safe",
+    "string"
+  ],
+  "author": "Andrea Giammarchi",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WebReflection/alphanumdun.git"
+  },
+  "bugs": {
+    "url": "https://github.com/WebReflection/alphanumdun/issues"
+  },
+  "homepage": "https://github.com/WebReflection/alphanumdun#readme"
+}
