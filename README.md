@@ -19,11 +19,11 @@ console.assert(id.decode(id.encode('/test')) === '/test');
 
 ## Implementation Details
 
-This 2 (effective) LOC utility simply excludes `-` as valid char and converts anything that is not `a-z`, `A-Z` or `0-9` into its *base36* counterpart surrounded by `-` accepted chars to guarantee every intent is unique but penalizing strings that heavily use `-` within their value.
+This 2 (effective) LOC utility simply excludes `-` as valid char and converts anything that is not `a-z`, `A-Z`, `0-9` or `_` into its *base36* counterpart surrounded by `-` accepted chars to guarantee every intent is unique but penalizing strings that heavily use `-` within their value.
 
 That's it, you can convert back and forward anything you like and use that as `id` in any *FileSystemHandle* related operation that accepts such `id` as optional *hint*.
 
-## Reasons behind `-` as penalized char
+### Reasons behind `-` as penalized char
 
 First of all, the easy way to convert any string to an alphanumeric compatible value is [base36](https://en.wikipedia.org/wiki/Base36), which is also the top conversion utility we have for numbers in *JS* so that `(1234567890).toString(36)` would produce `kf12oi` which is fully compatible with the alphanumeric ID the specs expect.
 
